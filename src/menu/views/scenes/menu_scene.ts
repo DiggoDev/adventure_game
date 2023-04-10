@@ -6,6 +6,7 @@ export class MenuScene extends Phaser.Scene {
 	private assets: Assets;
 
 	private startButton: Phaser.GameObjects.Text | undefined;
+	private newGameButton: Phaser.GameObjects.Text | undefined;
 	constructor(assets: Assets) {
 		super({ key: MenuScene.sceneKey });
 		this.sceneEvents = new Phaser.Events.EventEmitter();
@@ -27,8 +28,16 @@ export class MenuScene extends Phaser.Scene {
 		if(!this.startButton) throw new Error('Start button is not defined');
 		return this.startButton;
 	}
+	public getNewGameButton (): Phaser.GameObjects.Text {
+		if(!this.newGameButton) throw new Error('newGameButton is not defined');
+		return this.newGameButton;
+	}
 	private createMenuButtons (): void {
-		this.startButton = this.add.text(Number(this.game.config.width) / 2, Number(this.game.config.height) / 2, 'Start game');
+		// Start button
+		this.startButton = this.add.text(Number(this.game.config.width) / 2, Number(this.game.config.height) / 2, 'Start Game');
 		this.startButton.setInteractive();
+		// New game button
+		this.newGameButton = this.add.text(Number(this.game.config.width) / 2, (Number(this.game.config.height) / 2) + 20, 'New Game');
+		this.newGameButton.setInteractive();
 	}
 }

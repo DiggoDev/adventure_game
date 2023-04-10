@@ -3,6 +3,9 @@ export const config: Phaser.Types.Core.GameConfig = {
 	width: 800,
 	height: 600,
 	parent: 'game',
+	dom: {
+		createContainer: true
+	},
 	scene: [],
 	backgroundColor: '#FFFF00',
 };
