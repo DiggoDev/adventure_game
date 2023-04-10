@@ -2,9 +2,9 @@ export const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
 	width: 800,
 	height: 600,
-	parent: "game",
+	parent: 'game',
 	scene: [],
-	backgroundColor: "#FFFF00",
+	backgroundColor: '#FFFF00',
 };
 
 export function addScene(scene: Phaser.Scene) {
